@@ -1,0 +1,62 @@
+---
+title: "DATA_607_SP2023_Assigment_1"
+author: "Alex Khaykin"
+date: "2023-01-28"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+```
+
+```{r}
+library(git2r)
+```
+
+
+```{r}
+library(tidyr)
+library(dplyr)
+```
+
+```{r cars}
+AP <- read.csv("https://raw.githubusercontent.com/fivethirtyeight/covid-19-polls/master/covid_approval_toplines.csv")
+```
+
+```{r}
+library(scales)
+```
+
+```{r}
+colnames(AP)[1] <- "President"
+colnames(AP)[2] <- "Model_Date"
+colnames(AP)[3] <- "Political_Party"
+colnames(AP)[4] <- "Approval_Percentage"
+colnames(AP)[5] <- "Disapproval_Percentage"
+colnames(AP)[6] <- "Time_Stamp"
+```
+
+
+```{r}
+AP[AP == "R"] <- "Republican"
+```
+
+```{r}
+AP[AP == "D"] <- "Democrat"
+```
+
+```{r}
+AP[AP == "I"] <- "Independant"
+```
+
+```{r}
+AP[AP == "all"] <- "All"
+```
+
+
+```
+
